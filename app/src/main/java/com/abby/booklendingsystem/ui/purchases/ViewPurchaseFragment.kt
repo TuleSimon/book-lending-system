@@ -89,8 +89,8 @@ class ViewPurchaseFragment : Fragment() {
         }
 
         binding.bookPaymentMethod.setIfNotNull(book.purchasedMethod)
-        binding.bookDateofpurchased.setIfNotNull(convertDate(book.date))
-        book.date?.apply {
+        binding.bookDateofpurchased.setIfNotNull(convertDate(book.datePurchased))
+        book.datePurchased?.apply {
             val time = Calendar.getInstance()
             time.time  = this
             time.add(Calendar.DAY_OF_YEAR, 7)

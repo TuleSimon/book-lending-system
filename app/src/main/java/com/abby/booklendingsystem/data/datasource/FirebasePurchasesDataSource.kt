@@ -82,7 +82,8 @@ class FirebasePurchasesDataSource @Inject constructor(
         bookModel.purchasedUser = FirebaseAuth.getInstance().currentUser?.uid
         bookModel.datePurchased = Calendar.getInstance().time
         val ref = FirebaseCollections.getBookPurchasesCollection()
-        ref.document(bookModel.uid.toString()).set(bookModel).addOnCompleteListener {
+        ref.document(bookModel.uid.toString()+bookModel.purchasedUser)
+            .set(bookModel).addOnCompleteListener {
             if (it.isSuccessful) {
                 removeFromCart(bookModel)
                 result.complete(true)
@@ -218,7 +219,9 @@ class FirebasePurchasesDataSource @Inject constructor(
     }
 
     fun updateBook(bookModel: BookModel) {
-        FirebaseCollections.getBookPurchasesCollection().document(bookModel.uid.toString()).
+
+        FirebaseCollections.getBookPurchasesCollection().document(bookModel.uid.toString()+
+                bookModel.purchasedUser).
         update("returned",bookModel.isReturned,"pickedUp",bookModel.isPickedUp)
 
         if(bookModel.isReturned==true) {

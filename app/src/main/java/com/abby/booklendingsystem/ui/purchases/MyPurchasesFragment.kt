@@ -77,7 +77,7 @@ class MyPurchasesFragment() : Fragment(),ViewBookClick{
                                 getNewBooks()
                             }
                         }
-                        adapters.setItems(this.sortedBy { it.datePurchased })
+                        adapters.setItems(this.sortedBy { it.datePurchased }.reversed())
                     }
                 }
             }
