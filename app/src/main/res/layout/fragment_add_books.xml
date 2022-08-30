@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/main_appBarLayout"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:layout_width="wrap_content"
+                    app:title="Add Book"
+                    android:id="@+id/toolbar"
+                    app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                    android:layout_height="wrap_content"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:id="@+id/add_book_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_image_24"
+                app:layout_constraintDimensionRatio="w,1:1.3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                 />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_book_selectImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Dialog"
+            app:rippleColor="?colorPrimary"
+            android:textAppearance="@style/normalText"
+            android:text="Select Book Image"
+            android:textColor="@color/black"
+            app:icon="@drawable/ic_book_solid" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/add_book_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="Select Category" />
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_book_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:singleLine="true"
+            android:background="@drawable/input_bg"
+            android:hint="Title"
+            android:padding="15dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_book_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textAppearance="@style/normalText"
+            android:inputType="textMultiLine"
+            android:text="@string/lorem_ipsum"
+            android:background="@drawable/input_bg"
+            android:gravity="start"
+            android:hint="Book Description"
+            android:padding="15dp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/add_book_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_sterling_sign_solid"
+            android:drawablePadding="10dp"
+            android:drawableTint="@color/text"
+            android:background="@drawable/input_bg"
+            android:hint="Price"
+            android:inputType="number"
+            android:padding="15dp" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/add_book_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:numStars="5"
+            android:rating="4.5"
+             />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/add_book_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:hint="type" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:id="@+id/available"
+            android:text="Available"/>
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:layout_width="wrap_content"
+            android:id="@+id/recommend"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content"
+            android:text="Recommend"/>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_book_publishBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Publish"
+            android:padding="15dp"
+            android:textAllCaps="false"
+            app:cornerRadius="0dp" />
+
+
+
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

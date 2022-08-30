@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/calling_code"
+            android:gravity="center"
+            android:text="Create an account"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_activity_fullname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/input_bg"
+            android:fontFamily="@font/calling_code"
+            android:hint="Fullname"
+            android:singleLine="true"
+            android:padding="15dp"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_activity_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_bg"
+            android:inputType="textEmailAddress"
+            android:fontFamily="@font/calling_code"
+            android:hint="Email"
+            android:padding="15dp"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_activity_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:inputType="number"
+            android:background="@drawable/input_bg"
+            android:fontFamily="@font/calling_code"
+            android:hint="Phone Number"
+            android:padding="15dp"
+            android:textSize="14sp" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_activity_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_bg"
+            android:fontFamily="@font/calling_code"
+            android:hint="Address"
+            android:padding="15dp"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            app:passwordToggleEnabled="true"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_activity_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_bg"
+            android:fontFamily="@font/calling_code"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/signup_activity_confirmpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_bg"
+            android:fontFamily="@font/calling_code"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textSize="14sp" />
+
+        <com.jaredrummler.materialspinner.MaterialSpinner
+            android:id="@+id/signup_activity_selectRole"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/input_bg"
+            app:ms_hint="Select Role" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/signup_activity_createAccountBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/louis_george"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Create Account"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="5dp"
+            app:elevation="10dp"
+            app:rippleColor="@color/white" />
+
+        <LinearLayout
+            android:id="@+id/signup_activity_alreadyHaveAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="15dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/louis_george"
+                android:text="Already have an account?"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:fontFamily="@font/louis_george"
+                android:text="Login"
+                android:textColor="?colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

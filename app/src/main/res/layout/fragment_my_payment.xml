@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.payments.MyPaymentFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            android:layout_height="wrap_content"
+            app:title="Payments">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="48dp"
+                android:layout_height="wrap_content"
+                app:icon="@drawable/ic_baseline_delete_24"
+                android:id="@+id/delete"
+                android:layout_gravity="end"
+                app:iconTint="@color/text"
+                style="@style/iconButton"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+
+        <com.todkars.shimmer.ShimmerRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shimmer_recycler_layout="@layout/home_slider_row_shimmer"
+            tools:itemCount="13"
+            android:padding="10dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            android:id="@+id/cards_recyclerview"
+            tools:listitem="@layout/credit_card_view"
+            app:shimmer_recycler_item_count="7"
+            app:shimmer_recycler_repeat_count="100"
+            app:shimmer_recycler_repeat_mode="reverse"
+            app:shimmer_recycler_direction="left_to_right"
+            app:shimmer_recycler_auto_start="true"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <include android:id="@+id/errorlayout"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            layout="@layout/error_layout"/>
+
+<com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:layout_width="wrap_content"
+    android:contentDescription="@string/add_payments"
+    android:layout_height="wrap_content"
+    android:id="@+id/add_card"
+    android:layout_gravity="end|bottom"
+    android:layout_margin="10dp"
+    android:src="@drawable/ic_credit_card_solid"/>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/main_appBarLayout"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                app:title="Human behaviour"
+                app:layout_scrollFlags="snap|enterAlways"
+                android:id="@+id/toolbar"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/add_book_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_baseline_image_24"
+                    app:layout_constraintDimensionRatio="w,1:1.3"
+                    app:layout_constraintHeight_percent="0.9"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/book_name"
+                    style="@style/bigText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="UNDERSTANDING HUMAN BEHAvsdsu"
+                    app:layout_constraintBottom_toTopOf="@+id/book_author"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/add_book_image"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_chainStyle="packed" />
+
+                <TextView
+                    android:id="@+id/book_author"
+                    style="@style/normalText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="start"
+                    android:text="jogn doe"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/book_name"
+                    app:layout_constraintTop_toBottomOf="@+id/book_name" />
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/book_author"
+                    app:layout_constraintTop_toBottomOf="@+id/book_author">
+
+                    <TextView
+                        android:id="@+id/book_category"
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="10dp"
+                        android:gravity="center"
+                        android:text="Fiction" />
+
+                    <TextView
+                        style="@style/normalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=" || " />
+
+                    <androidx.appcompat.widget.AppCompatRatingBar
+                        android:id="@+id/book_rating"
+                        style="@style/Widget.AppCompat.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:rating="4.5" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+            android:id="@+id/book_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Order information"
+            android:layout_marginTop="20dp"
+            style="@style/bigText"
+            android:textStyle="bold"
+            />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Price:"
+                android:textColor="?colorPrimary"
+                style="@style/normalText"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/book_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                android:text="100"
+                style="@style/normalText"
+                android:textStyle="bold"
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Date purchased:"
+                    android:textColor="?colorPrimary"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/book_dateofpurchased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:text="23rd september,2021"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:id="@+id/return_layout"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Return date:"
+                    android:textColor="?colorPrimary"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/book_dateofreturn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:text="29th september,2021"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Payment method:"
+                    android:textColor="?colorPrimary"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/book_payment_method"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:text="Debit Card"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Book type:"
+                    android:textColor="?colorPrimary"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/book_purchase_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:text="Used Book"
+                    style="@style/normalText"
+                    android:textStyle="bold"
+                    />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grey_light"/>
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Track order"
+                android:layout_marginTop="10dp"
+                style="@style/bigText"
+                android:textStyle="bold"
+                />
+
+            <include android:id="@+id/payment_status"
+                layout="@layout/stepper_item"/>
+
+            <include android:id="@+id/delivery_status"
+                layout="@layout/stepper_item"/>
+            <include android:id="@+id/return_status"
+                layout="@layout/stepper_item"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/grey_light"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_height="wrap_content"
+                android:id="@+id/author_layout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Update Order Info"
+                android:layout_marginTop="10dp"
+                style="@style/bigText"
+                android:textStyle="bold"
+                />
+
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pickedup"
+                    android:textAppearance="@style/normalText"
+                    android:text="Picked Up"/>
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:layout_width="wrap_content"
+                    android:id="@+id/bookreturned"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="@style/normalText"
+                    android:text="Book Returned"/>
+                <com.google.android.material.checkbox.MaterialCheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/latebookreturned"
+                    android:visibility="gone"
+                    android:textAppearance="@style/normalText"
+                    android:text="Report to Admin for late return"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/update_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="Update Details"
+                    android:padding="15dp"
+                    android:textAllCaps="false"
+                    app:cornerRadius="0dp" />
+            </LinearLayout>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/review_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Review Book"
+                android:padding="15dp"
+                android:textAllCaps="false"
+                app:cornerRadius="0dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

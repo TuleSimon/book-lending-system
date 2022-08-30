@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Book Lending System</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_auth">Login or Create an account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin imperdiet sit amet odio ac rutrum. In faucibus nulla aliquam tortor semper laoreet. Proin condimentum, elit ac pretium interdum, quam neque eleifend nisi, non lobortis dui augue eu tellus. Sed sed augue libero. In gravida in urna nec tempor. Mauris vestibulum ex quam, ut luctus tellus faucibus ut. Cras at congue erat. Donec eget nibh ac lacus blandit aliquam.</string>
+    <string name="money_template"> £ %1$s</string>
+    <string name="cart_template">Add to cart £%1$s</string>
+    <string name="verification_error">Card not verifed</string>
+    <string name="verification_success">Card verified successfully</string>
+    <string name="add_payments">Add payments</string>
+
+
+    <string name="card_number_placeholder">**** **** **** ****</string>
+    <string name="card_holder">CARD HOLDER</string>
+    <string name="expiry">Expiry</string>
+    <string name="hint_card_holder_name">Card holder name</string>
+    <string name="hint_card_number">Card number</string>
+    <string name="hint_expiry_date">Expiry date</string>
+    <string name="hint_cvv">CVV</string>
+    <string name="card_expired">This card is expired</string>
+    <string name="card_exp_date_error">Format exception</string>
+    <string name="save_card">Save card</string>
+    <string name="card_saved">Card Saved</string>
+    <string name="book_del_prog">Book delivery in progress</string>
+    <string name="book_del_awaitingpick">Awaiting pick up</string>
+    <string name="book_del_delivered">Book Delivered</string>
+    <string name="book_del_picked_up">Picked up</string>
+
+</resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.books.NewBooksFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Notifications"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:shimmer_recycler_layout="@layout/home_slider_row_shimmer"
+        tools:itemCount="13"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_marginTop="10dp"
+        android:elevation="10dp"
+        android:id="@+id/books_recyclerview"
+        tools:listitem="@layout/book_row"
+        app:shimmer_recycler_item_count="7"
+        app:shimmer_recycler_repeat_count="100"
+        app:shimmer_recycler_repeat_mode="reverse"
+        app:shimmer_recycler_direction="left_to_right"
+        app:shimmer_recycler_auto_start="true"
+        app:layout_constraintTop_toBottomOf="@id/filter_category"
+        />
+
+    <include android:id="@+id/errorlayout"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/filter_category"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_width="match_parent"
+        layout="@layout/error_layout"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

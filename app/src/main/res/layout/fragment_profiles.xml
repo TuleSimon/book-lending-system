@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_gradients"
+            android:minHeight="200dp"
+            app:cardBackgroundColor="#00212121"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blue_gradients"
+                android:padding="10dp"
+                android:paddingBottom="20dp">
+
+
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="40dp"
+                    android:elevation="20dp"
+                    android:src="@drawable/person_ho"
+                    app:civ_border_color="?colorPrimaryVariant"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintDimensionRatio="w,1:1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.3" />
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:elevation="90dp"
+                    android:clickable="true"
+                    android:id="@+id/change_profilepic"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:civ_border_color="@color/white"
+                    app:civ_border_width="2dp"
+                    app:civ_circle_background_color="@color/click_colors"
+                    app:elevation="150dp"
+                    app:iconTint="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/user_image"
+                    app:layout_constraintEnd_toEndOf="@id/user_image" />
+
+                <TextView
+                    android:id="@+id/fullname"
+                    style="@style/biggerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="JOHN DOE"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/user_image"
+                    app:layout_constraintStart_toStartOf="@id/user_image"
+                    app:layout_constraintTop_toBottomOf="@id/user_image" />
+
+                <TextView
+                    style="@style/normalText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:singleLine="true"
+                    android:id="@+id/email"
+                    android:text="tulesimon98@gmail.com"
+                    android:textColor="@color/grey"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/user_image"
+                    app:layout_constraintStart_toStartOf="@id/user_image"
+                    app:layout_constraintTop_toBottomOf="@id/fullname"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/materialCardView"
+            android:layout_height="wrap_content">
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:icon="@drawable/ic_cart_arrow_down_solid"
+                app:iconTint="?colorPrimaryVariant"
+                android:id="@+id/cart"
+                android:textColor="@color/text"
+                app:backgroundTint="@color/white"
+                android:text="Cart"
+                android:padding="20dp"
+                app:iconSize="18dp"
+                app:rippleColor="?colorPrimary"
+                app:cornerRadius="0dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:icon="@drawable/ic_suitcase_rolling_solid"
+                app:iconTint="?colorPrimaryVariant"
+                android:layout_marginTop="10dp"
+                android:id="@+id/purchases"
+                android:textColor="@color/text"
+                app:backgroundTint="@color/white"
+                android:text="Purchases"
+                android:padding="20dp"
+                app:iconSize="18dp"
+                app:rippleColor="?colorPrimary"
+                app:cornerRadius="0dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:icon="@drawable/ic_credit_card_solid"
+                app:iconTint="?colorPrimaryVariant"
+                android:layout_marginTop="10dp"
+                android:id="@+id/payments"
+                android:textColor="@color/text"
+                app:backgroundTint="@color/white"
+                android:text="Payments"
+                app:iconSize="18dp"
+                android:padding="20dp"
+                app:rippleColor="?colorPrimary"
+                app:cornerRadius="0dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:icon="@drawable/ic_book_solid"
+                app:iconTint="?colorPrimaryVariant"
+                android:layout_marginTop="10dp"
+                android:id="@+id/mybooks"
+                android:textColor="@color/text"
+                app:backgroundTint="@color/white"
+                android:text="My Books"
+                app:iconSize="18dp"
+                android:padding="20dp"
+                app:rippleColor="?colorPrimary"
+                app:cornerRadius="0dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:icon="@drawable/ic_baseline_favorite_24"
+                app:iconTint="?colorPrimaryVariant"
+                android:layout_marginTop="10dp"
+                android:id="@+id/mywishlist"
+                android:textColor="@color/text"
+                app:backgroundTint="@color/white"
+                android:text="Wishlist"
+                app:iconSize="18dp"
+                android:padding="20dp"
+                app:rippleColor="?colorPrimary"
+                app:cornerRadius="0dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:icon="@drawable/ic_baseline_add_shopping_cart_24"
+                app:iconTint="?colorPrimaryVariant"
+                android:layout_marginTop="10dp"
+                android:id="@+id/mysales"
+                android:textColor="@color/text"
+                app:backgroundTint="@color/white"
+                android:text="My Sales"
+                app:iconSize="18dp"
+                android:padding="20dp"
+                app:rippleColor="?colorPrimary"
+                app:cornerRadius="0dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:icon="@drawable/ic_baseline_person_24"
+                app:iconTint="?colorPrimaryVariant"
+                android:layout_marginTop="10dp"
+                app:iconSize="18dp"
+                android:id="@+id/edit_profile"
+                android:textColor="@color/text"
+                app:backgroundTint="@color/white"
+                android:text="My Profile"
+                android:padding="20dp"
+                app:rippleColor="?colorPrimary"
+                app:cornerRadius="0dp"
+                android:drawableEnd="@drawable/ic_baseline_arrow_back_24"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_height="wrap_content"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:id="@+id/logout"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                app:icon="@drawable/ic_baseline_power_settings_new_24"
+                android:text="Log out"/>
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

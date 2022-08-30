@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.payments.MyPaymentFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            android:layout_height="wrap_content"
+            app:title="Select Payment Method">
+
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/paypal"
+                app:backgroundTint="@color/white"
+                android:textAppearance="@style/normalText"
+                android:textColor="@color/text"
+                android:textAlignment="viewStart"
+                android:shadowColor="@color/grey_light"
+                android:shadowRadius="10"
+                app:rippleColor="?colorSecondary"
+                app:elevation="10dp"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                app:icon="@drawable/ic_cc_paypal_brands"
+                app:iconGravity="end"
+                app:iconTint="@color/text"
+                android:text="Paypal"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/apple_pay"
+                app:backgroundTint="@color/white"
+                android:textAppearance="@style/normalText"
+                android:textColor="@color/text"
+                android:textAlignment="viewStart"
+                android:shadowColor="@color/grey_light"
+                android:shadowRadius="10"
+                app:rippleColor="?colorSecondary"
+                app:elevation="10dp"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                app:icon="@drawable/ic_cc_apple_pay_brands"
+                app:iconGravity="end"
+                app:iconTint="@color/text"
+                android:text="Apple Pay"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="or pay with saved cards"
+                android:layout_marginTop="30dp"
+                style="@style/bigText"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <com.todkars.shimmer.ShimmerRecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:shimmer_recycler_layout="@layout/home_slider_row_shimmer"
+            tools:itemCount="13"
+            android:padding="10dp"
+            android:minHeight="300dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            android:id="@+id/cards_recyclerview"
+            tools:listitem="@layout/credit_card_view"
+            app:shimmer_recycler_item_count="7"
+            app:shimmer_recycler_repeat_count="100"
+            app:shimmer_recycler_repeat_mode="reverse"
+            app:shimmer_recycler_direction="left_to_right"
+            app:shimmer_recycler_auto_start="true"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <include android:id="@+id/errorlayout"
+            android:visibility="gone"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_marginTop="50dp"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            layout="@layout/error_layout"/>
+        </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cancel"
+                android:padding="16dp"
+                android:text="Cancel"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

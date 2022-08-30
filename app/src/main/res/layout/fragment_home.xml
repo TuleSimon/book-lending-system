@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:background="@color/white"
+        android:layout_height="wrap_content">
+<com.google.android.material.appbar.MaterialToolbar
+    android:layout_width="match_parent"
+    android:id="@+id/tollbar"
+    app:title="Home"
+    app:layout_scrollFlags="enterAlways|snap"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/logo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_fragment_imageSlider"
+         />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="48dp"
+        android:id="@+id/cart"
+        style="@style/iconButton"
+        app:iconTint="@color/text"
+        android:layout_gravity="end"
+        android:layout_marginEnd="10dp"
+        app:icon="@drawable/ic_cart_arrow_down_solid"
+        android:layout_height="48dp"/>
+
+</com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_height="wrap_content">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:padding="10dp"
+    android:minHeight="800dp"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/welcome"
+        style="@style/normalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Welcome back,"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/name"
+        style="@style/normalText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="Abby"
+        android:textColor="?colorPrimary"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/welcome"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textview"
+        style="@style/biggerText"
+        android:layout_width="0dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        android:text="What do you want to read today?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/welcome"
+        app:layout_constraintWidth_percent="0.7" />
+
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/home_fragment_imageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textview"
+        app:sliderAnimationDuration="600"
+        app:sliderAutoCycleDirection="back_and_forth"
+        app:sliderAutoCycleEnabled="true"
+        app:sliderIndicatorGravity="center_horizontal|bottom"
+        app:sliderIndicatorMargin="15dp"
+        app:sliderIndicatorOrientation="horizontal"
+        app:sliderIndicatorPadding="3dp"
+        app:sliderIndicatorRadius="2dp"
+        app:sliderIndicatorSelectedColor="?colorPrimary"
+        app:sliderIndicatorUnselectedColor="@color/text"
+        app:sliderScrollTimeInSec="2"
+        app:sliderStartAutoCycle="true" />
+
+
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/shimmer"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:elevation="10dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/home_fragment_imageSlider"
+        app:shimmer_recycler_auto_start="true"
+        app:shimmer_recycler_direction="left_to_right"
+        app:shimmer_recycler_item_count="1"
+        app:shimmer_recycler_layout="@layout/home_slider_row_shimmer"
+        app:shimmer_recycler_repeat_count="100"
+        app:shimmer_recycler_repeat_mode="reverse"
+        tools:itemCount="3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recommended Books"
+        style="@style/bigText"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_fragment_imageSlider"
+        android:id="@+id/Recommended_books"/>
+
+    <com.todkars.shimmer.ShimmerRecyclerView
+        android:id="@+id/recommended_books"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Recommended_books"
+        app:shimmer_recycler_auto_start="true"
+        app:shimmer_recycler_direction="left_to_right"
+        app:shimmer_recycler_item_count="3"
+        app:shimmer_recycler_layout="@layout/home_slider_row_shimmer"
+        app:shimmer_recycler_repeat_count="100"
+        app:shimmer_recycler_repeat_mode="reverse"
+        tools:itemCount="3" />
+
+
+    <com.google.android.material.tabs.TabLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recommended_books"
+        app:tabGravity="fill"
+        app:tabTextAppearance="@style/normalText"
+        android:id="@+id/tab_layout"
+        android:layout_marginTop="10dp"
+        app:tabIndicatorAnimationDuration="500"
+        app:tabIndicatorHeight="3dp"
+        app:tabInlineLabel="true">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_book_solid"
+            android:text=" New Books" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/ic_book_open_solid"
+            android:text=" Used Books" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/viewpager"
+        android:minHeight="400dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

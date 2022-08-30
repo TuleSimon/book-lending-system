@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:padding="30dp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/bigText"
+        android:id="@+id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Select preferred pickup options"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:id="@+id/radiogroup"
+        android:checkedButton="@id/home_delivery"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_height="wrap_content">
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:layout_width="match_parent"
+            android:text="Home Delivery"
+            android:textColor="?colorPrimary"
+            app:buttonTint="?colorPrimary"
+            android:id="@+id/home_delivery"
+            android:textAppearance="@style/normalText"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/normalText"
+            android:layout_marginStart="20dp"
+            android:text="Get all your purchased books delivered to your doorsteps, it might take a couple of days for your orders to arrive but you can always track the delivery progress."/>
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:layout_width="match_parent"
+            android:text="Pickup at local bookstore"
+            android:textAppearance="@style/normalText"
+            android:textColor="?colorPrimary"
+            android:id="@+id/pickup_station"
+            app:buttonTint="?colorPrimary"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/normalText"
+            android:layout_marginStart="20dp"
+            android:text="Pickup your order from each local bookstore close to you, we have partners across different countries where you can pick up your orders from.."/>
+
+    </RadioGroup>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/contiue"
+        app:layout_constraintTop_toBottomOf="@id/radiogroup"
+        android:layout_marginTop="30dp"
+        android:text="Continue"/>
+
+    </LinearLayout>
+</ScrollView>

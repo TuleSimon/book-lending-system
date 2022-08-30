@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/root"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <com.maxpilotto.creditcardview.CreditCardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        app:cardCvv="123"
+        app:cardExpiry="1234"
+        app:cardExpiryLabel="Expiry"
+        app:cardHolder="John Doe"
+        app:cardHolderLabel="Holder"
+        app:cardNumber="5201284799337668"
+        app:cardTextSize="13sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/selectCard"
+        android:checked="false"
+        android:textAppearance="@style/normalText"
+        app:buttonTint="@color/white"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.2"
+        app:useMaterialThemeColors="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>

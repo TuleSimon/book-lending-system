@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/main_appBarLayout"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:layout_width="match_parent"
+                app:title="Human behaviour"
+                app:titleTextAppearance="@style/normalText"
+                app:layout_scrollFlags="snap|enterAlways"
+                android:id="@+id/toolbar"
+                app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+                android:layout_height="wrap_content"/>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="250dp">
+
+            <ImageView
+                android:id="@+id/add_book_image"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_image_24"
+                app:layout_constraintDimensionRatio="w,1:1.3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/book_name"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="UNDERSTANDING HUMAN BEHA"
+            style="@style/bigText"
+             />
+
+        <TextView
+            android:id="@+id/book_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:text="jogn doe"
+            style="@style/normalText"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="start"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/book_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Fiction"
+                android:layout_marginEnd="10dp"
+                style="@style/normalText"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=" || "
+                style="@style/normalText"
+                />
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/book_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:layout_marginStart="10dp"
+            android:isIndicator="true"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:rating="4.5"
+            />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/book_overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="OVERVIEW"
+            android:layout_marginTop="30dp"
+            style="@style/bigText"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:id="@+id/add_book_description"
+            android:layout_width="match_parent"
+            style="@style/normalText"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/lorem_ipsum"
+            android:gravity="start" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addto_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Add to cart $300"
+            android:padding="15dp"
+            android:textAllCaps="false"
+            app:cornerRadius="0dp" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addto_wishlist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:backgroundTint="#00388E3C"
+                android:textColor="?colorPrimary"
+                app:strokeColor="?colorPrimary"
+                app:elevation="0dp"
+                android:shadowColor="@color/grey_light"
+                app:strokeWidth="2dp"
+                android:text="Add to cart Wishlist"
+                android:padding="15dp"
+                android:textAllCaps="false"
+                app:cornerRadius="0dp" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
