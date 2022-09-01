@@ -52,7 +52,6 @@ class NewBooksFragment(var type:String) : Fragment(), ViewBookClick{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         booksViewModel.newBooks.observe(viewLifecycleOwner){
             binding.booksRecyclerview.hideShimmer()
             binding.errorlayout.root.hide()

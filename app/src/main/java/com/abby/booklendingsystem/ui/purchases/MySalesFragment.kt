@@ -78,7 +78,7 @@ class MySalesFragment() : Fragment(),ViewBookClick{
                                 getNewBooks()
                             }
                         }
-                        adapters.setItems(this)
+                        adapters.setItems(this.sortedBy { it.datePurchased }.reversed())
                     }
                 }
             }
@@ -101,7 +101,7 @@ class MySalesFragment() : Fragment(),ViewBookClick{
     }
 
     override fun click(bookModel: BookModel) {
-        val direction = MyPurchasesFragmentDirections.actionMyPurchasesFragmentToViewPurchaseFragment(bookModel)
+        val direction = MySalesFragmentDirections.actionMySalesFragmentToViewPurchaseFragment(bookModel)
         findNavController().navigate(direction)
     }
 

@@ -28,8 +28,6 @@ class BooksViewModel @Inject constructor(
     val newBooks = MutableLiveData<NetworkResult<List<BookModel>>>()
     val usedBooks = MutableLiveData<NetworkResult<List<BookModel>>>()
 
-    val _newBooks = MutableLiveData<NetworkResult<List<BookModel>>>()
-    val _usedBooks = MutableLiveData<NetworkResult<List<BookModel>>>()
     val category = MutableLiveData<String>()
 
 

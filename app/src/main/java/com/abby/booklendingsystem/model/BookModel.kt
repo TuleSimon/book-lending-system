@@ -1,6 +1,5 @@
 package com.abby.booklendingsystem.model
 
-import android.net.Uri
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 import java.util.*

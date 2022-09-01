@@ -7,44 +7,45 @@
     tools:context=".ui.home.HomeFragment">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="wrap_content">
-<com.google.android.material.appbar.MaterialToolbar
-    android:layout_width="match_parent"
-    android:id="@+id/tollbar"
-    app:title="Home"
-    app:layout_scrollFlags="enterAlways|snap"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_gravity="end"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/logo"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/home_fragment_imageSlider"
-         />
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/tollbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_scrollFlags="enterAlways|snap"
+            app:title="Home">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/logo"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/home_fragment_imageSlider" />
 
 
-    <com.google.android.material.button.MaterialButton
-        android:layout_width="48dp"
-        android:id="@+id/cart"
-        style="@style/iconButton"
-        app:iconTint="@color/text"
-        android:layout_gravity="end"
-        android:layout_marginEnd="10dp"
-        app:icon="@drawable/ic_cart_arrow_down_solid"
-        android:layout_height="48dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cart"
+                style="@style/iconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="end"
+                android:layout_marginEnd="10dp"
+                app:icon="@drawable/ic_cart_arrow_down_solid"
+                app:iconTint="@color/text" />
 
-</com.google.android.material.appbar.MaterialToolbar>
+        </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
 
@@ -200,4 +201,5 @@
 
 </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

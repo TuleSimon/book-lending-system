@@ -39,13 +39,23 @@
             app:popEnterAnim="@anim/animate_slide_down_enter"
             app:popExitAnim="@anim/animate_slide_down_exit">
         </action>
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notifications"
+            app:destination="@id/navigation_notifications" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_notifications2"
+            app:destination="@id/navigation_notifications" />
     </fragment>
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.abby.booklendingsystem.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/fragment_notifications" >
+        <action
+            android:id="@+id/action_navigation_notifications_to_addBooksFragment"
+            app:destination="@id/addBooksFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -82,7 +92,8 @@
         </action>
         <action
             android:id="@+id/action_navigation_dashboard_to_myPaymentFragment"
-            app:destination="@id/myPaymentFragment"  app:enterAnim="@anim/animate_slide_in_left"
+            app:destination="@id/myPaymentFragment"
+            app:enterAnim="@anim/animate_slide_in_left"
             app:exitAnim="@anim/animate_slide_left_exit"
             app:popEnterAnim="@anim/animate_slide_down_enter"
             app:popExitAnim="@anim/animate_slide_down_exit">
@@ -113,6 +124,15 @@
         <action
             android:id="@+id/action_navigation_dashboard_to_wishlistFragment"
             app:destination="@id/wishlistFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_viewPurchaseFragment"
+            app:destination="@id/viewPurchaseFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_viewPurchaseFragment2"
+            app:destination="@id/viewPurchaseFragment" />
+        <action
+            android:id="@+id/action_navigation_dashboard_to_myLendsFragment"
+            app:destination="@id/myLendsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addBooksFragment"
@@ -213,7 +233,11 @@
         android:id="@+id/mySalesFragment"
         tools:layout="@layout/fragment_my_sales"
         android:name="com.abby.booklendingsystem.ui.purchases.MySalesFragment"
-        android:label="MySalesFragment" />
+        android:label="MySalesFragment" >
+        <action
+            android:id="@+id/action_mySalesFragment_to_viewPurchaseFragment"
+            app:destination="@id/viewPurchaseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myProfileFragment"
         tools:layout="@layout/fragment_profile"
@@ -227,6 +251,15 @@
         <action
             android:id="@+id/action_wishlistFragment_to_viewFragment"
             app:destination="@id/viewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myLendsFragment"
+        tools:layout="@layout/fragment_my_purchases"
+        android:name="com.abby.booklendingsystem.ui.purchases.MyLendsFragment"
+        android:label="MyLendsFragment" >
+        <action
+            android:id="@+id/action_myLendsFragment_to_viewPurchaseFragment"
+            app:destination="@id/viewPurchaseFragment" />
     </fragment>
 
 

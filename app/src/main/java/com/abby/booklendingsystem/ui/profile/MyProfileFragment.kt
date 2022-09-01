@@ -10,6 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import com.abby.booklendingsystem.databinding.FragmentProfileBinding
 import com.abby.booklendingsystem.ui.purchases.PurchasedBooksViewModel
 import com.abby.booklendingsystem.utils.load
+import com.abby.booklendingsystem.utils.registerBackAction
 import com.abby.booklendingsystem.utils.setIfNotNull
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,7 +35,7 @@ class MyProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         updateInfo()
-
+            binding.toolbar.registerBackAction(this)
     }
 
 

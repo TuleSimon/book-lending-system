@@ -55,6 +55,7 @@ class MainActivity : AppCompatActivity(), PermissionListener {
         super.onCreate(savedInstanceState)
         setTheme(R.style.Theme_BookLendingSystem)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        checkIfLoggedIn()
     }
 
 
@@ -134,7 +135,6 @@ class MainActivity : AppCompatActivity(), PermissionListener {
 
     override fun onResume() {
         super.onResume()
-        checkIfLoggedIn()
     }
 
     private fun checkStoragePermission() {

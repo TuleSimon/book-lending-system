@@ -69,6 +69,10 @@ class ProfileFragment : Fragment() {
         binding.purchases.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_dashboard_to_myPurchasesFragment)
         }
+
+        binding.lends.setOnClickListener {
+            findNavController().navigate(R.id.action_navigation_dashboard_to_myLendsFragment)
+        }
         binding.mysales.setOnClickListener {
             findNavController().navigate(R.id.action_navigation_dashboard_to_mySalesFragment)
         }
@@ -97,6 +101,7 @@ class ProfileFragment : Fragment() {
                 if(this.role.equals( "Reader",true)){
                     binding.mysales.hide()
                     binding.mybooks.hide()
+                    binding.fullname.text= author.fullname
                 }
             }
         }

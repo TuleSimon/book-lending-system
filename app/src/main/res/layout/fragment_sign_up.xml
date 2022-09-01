@@ -79,11 +79,7 @@
             android:padding="15dp"
             android:textSize="14sp" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            app:passwordToggleEnabled="true"
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_height="wrap_content">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signup_activity_password"
             android:layout_width="match_parent"
@@ -95,7 +91,6 @@
             android:inputType="textPassword"
             android:padding="15dp"
             android:textSize="14sp" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/signup_activity_confirmpassword"

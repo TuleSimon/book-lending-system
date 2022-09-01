@@ -91,6 +91,8 @@ class NotificationsFragment : Fragment() {
 
         if(adapters.itemCount==0)
             getNotificationss()
+        else
+            (requireActivity() as MainActivity).hideBadge()
     }
 
     private fun getNotificationss() =lifecycleScope.launch{

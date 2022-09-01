@@ -21,6 +21,7 @@ import com.abby.booklendingsystem.model.BookModel
 import com.abby.booklendingsystem.ui.books.BooksViewModel
 import com.abby.booklendingsystem.ui.home.HomeFragmentDirections
 import com.abby.booklendingsystem.ui.mybooks.NEW_BOOK
+import com.abby.booklendingsystem.ui.mybooks.OLD_BOOK
 import com.abby.booklendingsystem.utils.AUTHOR_BOOKS
 import com.abby.booklendingsystem.utils.hide
 import com.abby.booklendingsystem.utils.registerBackAction
@@ -30,7 +31,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class MyPurchasesFragment() : Fragment(),ViewBookClick{
+class MyLendsFragment() : Fragment(),ViewBookClick{
 
 
     lateinit var binding:FragmentMyPurchasesBinding
@@ -52,7 +53,7 @@ class MyPurchasesFragment() : Fragment(),ViewBookClick{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        binding.tollbar.title="Borrowed Books"
         pbViewModel.purchasedBooksResponse.observe(viewLifecycleOwner){ it ->
             binding.booksRecyclerview.hideShimmer()
             binding.tollbar.registerBackAction(this)
@@ -78,7 +79,7 @@ class MyPurchasesFragment() : Fragment(),ViewBookClick{
                                 getNewBooks()
                             }
                         }
-                        adapters.setItems(this.filter {list ->  list.type.equals(NEW_BOOK,true)}.
+                        adapters.setItems(this.filter {list ->  list.type.equals(OLD_BOOK,true)}.
                         sortedBy { it.datePurchased }.reversed())
                     }
                 }
@@ -102,7 +103,7 @@ class MyPurchasesFragment() : Fragment(),ViewBookClick{
     }
 
     override fun click(bookModel: BookModel) {
-        val direction = MyPurchasesFragmentDirections.actionMyPurchasesFragmentToViewPurchaseFragment(bookModel)
+        val direction = MyLendsFragmentDirections.actionMyLendsFragmentToViewPurchaseFragment(bookModel)
         findNavController().navigate(direction)
     }
 
